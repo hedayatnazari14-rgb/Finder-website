@@ -1,0 +1,1214 @@
+/* --- Base Resets & Global Fixes --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+  background-color: #f7f8fa;
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+}
+
+/* --- Navbar --- */
+.navbar {
+  position: fixed;
+  left: 0%;
+  right: 0%;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  z-index: 50;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menue {
+  margin-left: 32px;
+  display: flex;
+  gap: 32px;
+}
+
+.nav-menue a {
+  color: rgb(87, 84, 84);
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.nav-menue a:hover {
+  color: #000;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-actions a {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.btn-primary {
+  color: white;
+  background-color: black;
+}
+
+.btn-outline {
+  color: black;
+  background-color: transparent;
+}
+
+/* --- Hero Section --- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  text-align: center;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.hero-content {
+  max-width: 850px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 20px 0;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.hero-btn {
+  display: flex;
+  gap: 12px;
+}
+
+.hero-btn a {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 10px 22px;
+  background-color: white;
+  text-decoration: none;
+  color: black;
+}
+
+.hero .black-btn {
+  background-color: black;
+  color: white;
+}
+
+.hero video {
+  max-width: 1000px;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  margin-top: 40px;
+}
+
+/* --- Featured Section --- */
+.featured-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.featured-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+}
+
+.sub-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #222222;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.radio-dot {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #757575;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.radio-dot::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: #222222;
+  border-radius: 50%;
+}
+
+.main-heading {
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.header-right {
+  max-width: 320px;
+}
+
+.header-right p {
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.5;
+}
+
+/* --- Grid & Cards Layout --- */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+  width: 100%;
+}
+
+/* First Card spans 2 columns */
+.card-large {
+  grid-column: span 2;
+}
+
+/* Seamless Card Container (No outer padding for image) */
+.card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 0; /* Set to 0 so the image touches the card edges */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden; /* Clips top edges of image to match card border-radius */
+}
+
+/* Equal Height Image Container */
+.card-image-container {
+  position: relative;
+  width: 100%;
+  border-radius: 0;
+  overflow: hidden;
+  height: 320px; /* Equal height across all cards */
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Badges (Houses / Rent) */
+.badge-group {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: flex;
+  gap: 8px;
+  z-index: 5;
+}
+
+.badge {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 5px 15px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-dark {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.badge-light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Card Text Styling (With Padding) */
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111111;
+  margin-top: 14px;
+  padding: 0 16px; /* Indents text properly */
+}
+
+.card-address {
+  font-size: 13px;
+  color: #777777;
+  margin-top: 4px;
+  padding: 0 16px 16px 16px; /* Bottom spacing for card body */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/*--------------------- benefits-section --------------------- */
+.benefits-section {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eeeff4;
+}
+
+.benefits-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+/* ==========================================================================
+   LEFT COLUMN: COLLAGE & BADGES
+   ========================================================================== */
+.collage-container {
+  position: relative;
+  width: 520px;
+  height: 650px;
+  flex-shrink: 0;
+}
+
+.img-wrapper {
+  position: absolute;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.collage-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Main Image */
+.main-img-wrapper {
+  top: 90px;
+  left: 60px;
+  width: 320px;
+  height: 480px;
+  z-index: 1;
+}
+
+/* Overlay Top Right Image */
+.top-right-img-wrapper {
+  top: 30px;
+  right: 20px;
+  width: 210px;
+  height: 170px;
+  z-index: 3;
+}
+
+/* Overlay Bottom Left Image */
+.bottom-left-img-wrapper {
+  bottom: 20px;
+  left: 30px;
+  width: 200px;
+  height: 170px;
+  z-index: 3;
+}
+
+/* Floating Badges */
+.badges {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  color: #111111;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+  z-index: 4;
+}
+
+.badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+/* Badge Offsets */
+.badge-top-right {
+  top: 80px;
+  right: 130px;
+}
+
+.badge-mid-left {
+  top: 205px;
+  left: 30px;
+}
+
+.badge-mid-right {
+  top: 310px;
+  right: 10px;
+}
+
+.badge-lower-left {
+  bottom: 230px;
+  left: 30px;
+}
+
+.badge-bottom-right {
+  bottom: 80px;
+  right: 110px;
+}
+
+/* ==========================================================================
+   RIGHT COLUMN: TEXT & CARDS
+   ========================================================================== */
+.content-container {
+  flex-grow: 1;
+  max-width: 580px;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #4a5568;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.tag-icon {
+  font-size: 14px;
+}
+
+.section-title {
+  font-size: 42px;
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: #0d0d0d;
+  margin-bottom: 20px;
+}
+
+.section-description {
+  font-size: 15px;
+  color: #666666;
+  margin-bottom: 32px;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* Service Cards Structure */
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.service-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.service-number {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  min-width: 32px;
+}
+
+.service-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0d0d0d;
+  margin-bottom: 6px;
+}
+
+.service-text {
+  font-size: 13.5px;
+  color: #666666;
+  line-height: 1.5;
+}
+
+/* Call To Action Button */
+.btn-primary {
+  display: inline-block;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLETS & MOBILE)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .benefits-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .collage-container {
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 600px) {
+  .collage-container {
+    transform: scale(0.65);
+    margin: -80px 0;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+}
+/* ================================ ============
+   section our location for you
+   ==============================================*/
+.ourlocation {
+  padding: 80px 20px;
+  background: #fefefe;
+}
+.header-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+
+  width: 50ch;
+}
+.header-center h2 {
+  font-size: 40px;
+  font-weight: 700;
+}
+.header-center p {
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+.location-cards {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.loc-card {
+  width: 350px;
+}
+.location-cards img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.grow {
+  flex-grow: 1;
+}
+.first-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.second-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+
+  max-width: 1082px;
+  margin: 0 auto;
+}
+.location-cards img:hover {
+  zoom: 0fr;
+}
+/*----------------------------------
+ style of section process
+ ----------------------------------- */
+/* 1. Full-Width Background Section */
+.process-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  /* Replace URL with your actual background image */
+  background-image: url(images/backround-image.jpeg);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Layout alignment for the white card */
+  display: flex;
+  align-items: center;
+  padding: 60px 10%;
+  margin-bottom: 50px;
+}
+
+/* 2. Floating White Card */
+.process-card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 440px;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Sub-header */
+.sub-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #555555;
+  text-transform: uppercase;
+}
+
+/* Typography */
+.title {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-size: 13px;
+  color: #666666;
+  line-height: 1.5;
+}
+
+/* Steps List Setup */
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.step-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.step-number {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111111;
+  min-width: 28px;
+}
+
+.step-content h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.step-content p {
+  font-size: 12px;
+  color: #666666;
+  line-height: 1.4;
+}
+
+/* Call to Action Button */
+.cta-button {
+  display: inline-block;
+  align-self: flex-start;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #333333;
+}
+/* -------------------------------
+ style of section fresh on the market
+ -----------------------------------  */
+.fresh-market {
+  margin-left: 40px;
+  margin-bottom: 70px;
+}
+.flex-header {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-header h2 {
+  font-size: 32px;
+  font-weight: 500;
+}
+.flex-header p {
+  width: 44ch;
+}
+.head-navbar {
+  display: flex;
+  gap: 10px;
+}
+.head-navbar a {
+  border-radius: 30px;
+  background: #f3f3f5;
+  text-decoration: none;
+  color: #000000;
+  padding: 10px;
+}
+#black-link {
+  background: #000;
+  color: white;
+}
+
+.head-navbar a:hover {
+  background-color: #00000090;
+  color: whitesmoke;
+}
+/* market cards */
+.market-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 380px);
+  justify-content: space-evenly;
+  max-width: 1200px;
+
+  gap: 16px;
+}
+
+.market-card {
+  margin-top: 30px;
+  width: 380px;
+
+  border-radius: 8px;
+  background: #e9ebef;
+  margin-bottom: 20px;
+}
+.card-image-wrap {
+  position: relative;
+}
+.rid {
+  background-color: #000;
+  color: white;
+}
+.market-card img {
+  width: 100%;
+  height: 60%;
+  border-radius: 8px;
+}
+.market-card span {
+  color: rgb(10, 1, 1);
+}
+.market-card .market-span {
+  display: flex;
+  gap: 10px;
+}
+hr {
+  margin: auto;
+  width: 300px;
+}
+
+.flex-marketfooter {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.flexmarket {
+  display: inline-flex;
+  justify-content: center;
+  gap: 6px;
+}
+.flexmarket p {
+  margin-top: 10px;
+}
+
+.flexmarket img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.market-card h4,
+span {
+  margin-left: 20px;
+}
+#veiwall-bten {
+  text-decoration: none;
+  background-color: #000;
+  color: white;
+  border-radius: 25px;
+  padding: 6px;
+  margin-left: 5px;
+}
+/* -----------------------------
+style of section what our clints say
+--------------------------------------------- */
+.clients {
+  background: #ebedf2;
+}
+.clients .subtitle {
+  margin-top: 50px;
+}
+.client-cards {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 10px;
+}
+.client-card {
+  width: 250px;
+  padding: 10px;
+  border-radius: 8px;
+
+  background-color: #fefefe;
+}
+.black-cards {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #000;
+  color: white;
+  height: 200px;
+  gap: 15px;
+}
+.black-cards div {
+  color: white;
+  width: 47ch;
+  padding: 10px;
+  border-right: 1px solid whitesmoke;
+}
+/* ------------------------------
+Insights & Updates section 
+---------------------------------- */
+.insights {
+  margin-left: 40px;
+  margin-bottom: 70px;
+}
+.insights-header {
+  margin-left: 100px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
+.insights-header .flex-header {
+  margin-left: 80px;
+  margin-right: 65px;
+}
+.insights-header .subtitle {
+  margin-left: 62px;
+}
+.update-cards {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.update-card {
+  width: 290px;
+  height: 350px;
+
+  background-color: #f2f4f7;
+  margin-bottom: 40px;
+}
+.update-card img {
+  border-radius: 10px;
+  width: 100%;
+  height: 60%;
+}
+.update-card-body {
+  padding: 10px;
+}
+.update-card-body p {
+  font-size: 13px;
+}
+/* --------------------------------------fotter-------------------------------------- */
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Container relative anchor */
+.footer-wrapper {
+  position: relative;
+  margin-top: 180px; /* Space for the overlapping card */
+}
+
+/* 1. OVERLAPPING CTA BANNER */
+.cta-banner {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Pulls card up 50% into the white space */
+  width: 90%;
+  max-width: 1600px;
+  height: 340px;
+  color: white;
+  border-radius: 16px;
+  overflow: hidden;
+
+  /* Background image with dark gradient overlay */
+  background-image: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  z-index: 10;
+}
+
+/* Dark tint overlay on background image */
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  gap: 16px;
+}
+
+.cta-content h2 {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.cta-content p {
+  font-size: 14px;
+  max-width: 580px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+}
+
+.cta-btn {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 8px;
+  transition: opacity 0.2s;
+}
+
+.cta-btn:hover {
+  opacity: 0.9;
+}
+
+/* 2. FOOTER SECTION */
+.footer {
+  background-color: #000000;
+  padding-top: 220px; /* Padding accommodates the overlapping card */
+  padding-bottom: 40px;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-col h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.footer-col p,
+.footer-col li,
+.footer-col a {
+  font-size: 13px;
+  color: #888888;
+  line-height: 1.8;
+  text-decoration: none;
+  list-style: none;
+}
+
+.footer-col a:hover {
+  color: #ffffff;
+}
+
+/* Newsletter Input Pill */
+.sub-text {
+  margin-bottom: 12px;
+}
+
+.newsletter-input-group {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 9999px;
+  padding: 4px 6px 4px 16px;
+  margin-bottom: 10px;
+}
+
+.newsletter-input-group input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 13px;
+  color: #000000;
+}
+
+.submit-btn {
+  width: 32px;
+  height: 32px;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.privacy-note {
+  font-size: 11px !important;
+  color: #555555 !important;
+  line-height: 1.4 !important;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  font-size: 12px;
+  color: #666666;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.social-links a {
+  color: #666666;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: #ffffff;
+}
+
+/* Container Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Card Wrapper */
+.property-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f8fa;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Floating Badges Anchor */
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge-container {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.badge {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.badge-dark {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.badge-light {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+/* Content Details */
+.card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.location {
+  font-size: 14px;
+  color: #71717a;
+  margin-bottom: 6px;
+}
+
+.title {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #18181b;
+}
+
+.features {
+  display: flex;
+  gap: 14px;
+  font-size: 13px;
+  color: #52525b;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #e4e4e7;
+  margin: 16px 0;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* Aligns footer to the bottom evenly */
+}
+
+.agent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.agent-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.agent-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 700;
+}
